@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Pagina niet gevonden — Generation-IP</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E3328">
+<link rel="icon" href="/assets/favicon.png" sizes="32x32">
+<style>
+  :root{
+    color-scheme:light dark;
+    --bg:#ffffff;--text:#16211a;--text-soft:#55665c;--brand:#1e3328;--accent:#de6c2d;--border:#e3e9e4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#101613;--text:#eef2ee;--text-soft:#a8b8ad;--brand:#c9d6cb;--accent:#e88f52;--border:#25322a}
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--text);text-align:center;padding:24px;
+    font-family:"Segoe UI",Inter,system-ui,-apple-system,Arial,sans-serif;line-height:1.65;
+  }
+  .box{max-width:34rem}
+  img{height:52px;width:auto;margin-bottom:34px}
+  .logo-dark{display:none}
+  @media (prefers-color-scheme: dark){.logo-light{display:none}.logo-dark{display:inline-block}}
+  .code{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);background:rgba(222,108,45,.12);padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  h1{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.02em;margin:0 0 .5em}
+  p{color:var(--text-soft);margin:0 0 1.6em}
+  a.btn{
+    display:inline-block;background:var(--brand);color:#f6f5f2;font-weight:650;
+    padding:12px 24px;border-radius:999px;text-decoration:none;
+  }
+  @media (prefers-color-scheme: dark){a.btn{color:#101613}}
+  a.btn:hover{background:var(--accent);color:#1a1005}
+  a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+  <div class="box">
+    <img class="logo-light" src="/assets/logo.png" alt="Generation-IP">
+    <img class="logo-dark" src="/assets/logo-light.png" alt="Generation-IP">
+    <div class="code">Fout 404</div>
+    <h1>Deze pagina bestaat niet</h1>
+    <p>De pagina die u zocht is verplaatst of bestaat niet meer. Ga terug naar de startpagina, of stuur ons gerust een bericht.</p>
+    <a class="btn" href="/">Terug naar de startpagina</a>
+  </div>
+</body>
+</html>

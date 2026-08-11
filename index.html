@@ -1,11 +1,380 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title>Generation IP</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Generation-IP — Modern Workplace consulting &amp; implementatie</title>
+<meta name="description" content="Generation-IP begeleidt organisaties bij advies en implementatie van de moderne digitale werkplek: Microsoft 365, Entra ID, Azure, Teams &amp; SharePoint, security en Copilot.">
+<link rel="canonical" href="https://www.generation-ip.com/">
+<meta name="theme-color" content="#1E3328">
+<link rel="icon" href="assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="Generation-IP">
+<meta property="og:title" content="Generation-IP — Modern Workplace consulting &amp; implementatie">
+<meta property="og:description" content="Advies én implementatie van de moderne digitale werkplek: Microsoft 365, Entra ID, Azure, Teams &amp; SharePoint, security en Copilot.">
+<meta property="og:url" content="https://www.generation-ip.com/">
+<meta property="og:image" content="https://www.generation-ip.com/assets/hero-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    color-scheme:light dark;
+    --bg:#ffffff;
+    --bg-soft:#f5f7f5;
+    --surface:#ffffff;
+    --border:#e3e9e4;
+    --text:#16211a;
+    --text-soft:#55665c;
+    --brand:#1e3328;
+    --brand-deep:#14251c;
+    --brand-soft:#eaefea;
+    --accent:#de6c2d;
+    --accent-soft:rgba(222,108,45,.12);
+    --shadow:0 1px 2px rgba(16,40,30,.05),0 8px 24px rgba(16,40,30,.06);
+    --radius:16px;
+    --maxw:1120px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101613;
+      --bg-soft:#151d18;
+      --surface:#18211c;
+      --border:#25322a;
+      --text:#eef2ee;
+      --text-soft:#a8b8ad;
+      --brand:#c9d6cb;
+      --brand-deep:#e0a37f;
+      --brand-soft:#1e2b22;
+      --accent:#e88f52;
+      --accent-soft:rgba(232,143,82,.14);
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:"Segoe UI",Inter,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  a{color:var(--brand-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  h1,h2,h3{line-height:1.2;letter-spacing:-.02em;margin:0 0 .5em}
+  h1{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:700}
+  h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700}
+  h3{font-size:1.13rem;font-weight:650}
+  p{margin:0 0 1em}
+  .lead{font-size:1.12rem;color:var(--text-soft);max-width:62ch}
+  .skip{position:absolute;inset-inline-start:-9999px;top:0}
+  .skip:focus{inset-inline-start:8px;top:8px;background:var(--surface);padding:10px 16px;border-radius:8px;z-index:99;box-shadow:var(--shadow)}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
+    padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+
+  header.site{
+    position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:saturate(160%) blur(10px);border-block-end:1px solid var(--border);
+  }
+  .navbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+  .brand img{display:block;height:38px;width:auto}
+  .logo-dark{display:none}
+  @media (prefers-color-scheme: dark){.logo-light{display:none}.logo-dark{display:block}}
+  nav.main{display:flex;gap:26px;flex-wrap:wrap}
+  nav.main a{color:var(--text-soft);font-size:.95rem;font-weight:550}
+  nav.main a:hover{color:var(--accent);text-decoration:none}
+  @media (max-width:760px){nav.main{display:none}}
+  .btn{
+    display:inline-block;background:var(--brand);color:#f6f5f2;font-weight:650;
+    padding:12px 22px;border-radius:999px;border:1px solid transparent;
+    box-shadow:var(--shadow);font-size:.97rem;white-space:nowrap;
+  }
+  .btn:hover{background:var(--accent);color:#1a1005;text-decoration:none}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--border);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);background:transparent}
+
+  .hero{position:relative;overflow:hidden;border-block-end:1px solid var(--border)}
+  .hero .bg{
+    position:absolute;inset:0;background-image:url("assets/hero-1200.jpg");
+    background-size:cover;background-position:center;
+  }
+  @media (min-width:1100px){.hero .bg{background-image:url("assets/hero.jpg")}}
+  .hero .veil{
+    position:absolute;inset:0;
+    background:linear-gradient(100deg,#14251c 10%,color-mix(in srgb,#14251c 80%,transparent) 55%,color-mix(in srgb,#14251c 34%,transparent) 100%);
+  }
+  .hero .inner{position:relative;padding-block:clamp(66px,10vw,124px);max-width:44rem;color:#eef2ee}
+  .hero h1{color:#f6f5f2}
+  .hero .lead{color:#c3d0c5}
+  .hero .eyebrow{background:rgba(222,108,45,.18);color:#f0a877}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .hero .btn.ghost{color:#eef2ee;border-color:rgba(238,242,238,.4)}
+  .hero .btn.ghost:hover{border-color:var(--accent);color:#f0a877}
+
+  section{padding-block:clamp(52px,7vw,86px)}
+  section.soft{background:var(--bg-soft);border-block:1px solid var(--border)}
+  .section-head{max-width:62ch;margin-bottom:40px}
+
+  .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+  .card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .card .ico{
+    width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;margin-bottom:16px;
+  }
+  .card p{margin:0;color:var(--text-soft);font-size:.97rem}
+
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  ol.steps li{counter-increment:s;padding-block-start:16px;border-block-start:2px solid var(--accent)}
+  ol.steps li::before{content:"0" counter(s);display:block;font-weight:700;color:var(--accent);font-size:.9rem;letter-spacing:.08em;margin-bottom:6px}
+  ol.steps strong{display:block;margin-bottom:4px}
+  ol.steps span{color:var(--text-soft);font-size:.95rem}
+
+  .split{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+  ul.check{list-style:none;padding:0;margin:0}
+  ul.check li{padding-inline-start:30px;position:relative;margin-bottom:12px;color:var(--text-soft)}
+  ul.check li::before{
+    content:"";position:absolute;inset-inline-start:0;top:.55em;width:14px;height:8px;
+    border-inline-start:2.5px solid var(--accent);border-block-end:2.5px solid var(--accent);
+    transform:rotate(-45deg);
+  }
+
+  .tech{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .tech li{
+    border:1px solid var(--border);border-radius:999px;padding:8px 16px;
+    font-size:.9rem;color:var(--text-soft);background:var(--surface);
+  }
+
+  .cta{
+    background:linear-gradient(120deg,#14251c,#2a4634);
+    color:#eef2ee;border-radius:22px;padding:clamp(30px,5vw,54px);text-align:center;
+  }
+  .cta h2{color:#f6f5f2}
+  .cta p{color:#c3d0c5;max-width:54ch;margin-inline:auto}
+  .cta .btn{background:var(--accent);color:#1a1005;margin-top:10px}
+  .cta .btn:hover{background:#f6f5f2;color:#14251c}
+
+  .contact{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .contact dt{font-weight:650;margin-bottom:2px;font-size:.95rem}
+  .contact dd{margin:0 0 16px;color:var(--text-soft)}
+
+  footer.site{border-block-start:1px solid var(--border);background:var(--bg-soft);padding-block:34px;font-size:.9rem;color:var(--text-soft)}
+  .foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+  footer.site img{height:30px;width:auto;display:block}
+  .legal{font-size:.85rem;line-height:1.6}
+
+  @media print{
+    header.site{position:static;backdrop-filter:none}
+    .hero .bg,.hero .veil{display:none}
+    .hero .inner{color:#000}
+    .hero h1{color:#000}
+    .hero .lead{color:#333}
+    .btn,nav.main{display:none}
+    section{padding-block:22px;break-inside:avoid}
+    .card{box-shadow:none}
+    body{font-size:11pt}
+  }
+</style>
 </head>
 <body>
-    <h1>Generation IP</h1>
-    <p>Welkom op mijn Azure Static Web App.</p>
+
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="brand" href="#top" aria-label="Generation-IP, naar boven">
+      <img class="logo-light" src="assets/logo.png" width="560" height="70" alt="Generation-IP">
+      <img class="logo-dark" src="assets/logo-light.png" width="560" height="70" alt="Generation-IP">
+    </a>
+    <nav class="main" aria-label="Hoofdnavigatie">
+      <a href="#diensten">Diensten</a>
+      <a href="#aanpak">Aanpak</a>
+      <a href="#waarom">Waarom wij</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Plan een gesprek</a>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="hero" id="top">
+  <div class="bg" role="presentation"></div>
+  <div class="veil" role="presentation"></div>
+  <div class="wrap inner">
+    <span class="eyebrow">Modern Workplace consultancy</span>
+    <h1>Slimmer samenwerken met Microsoft 365</h1>
+    <p class="lead">Generation-IP is uw partner voor advies én implementatie van de moderne digitale werkplek: Microsoft 365, Entra ID, Azure, Teams en SharePoint, veilige toegang, automatisering en Copilot. Wij leveren geen hardware — wél doordachte oplossingen die uw mensen elke dag gebruiken.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#contact">Vrijblijvend kennismaken</a>
+      <a class="btn ghost" href="#diensten">Ontdek onze diensten</a>
+    </div>
+  </div>
+</div>
+
+<section id="diensten">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Diensten</span>
+      <h2>Consulting &amp; implementatie voor de moderne werkplek</h2>
+      <p class="lead">Van advies tot uitrol en adoptie. Wij denken mee over de aanpak en voeren ze ook uit — zuiver software, cloud en processen, geen hardware.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="ico" aria-hidden="true">◆</div>
+        <h3>Modern Workplace-strategie</h3>
+        <p>Een heldere roadmap voor uw digitale werkplek: waar staat u vandaag, welke licenties heeft u nodig, en in welke volgorde pakt u het aan.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">☁</div>
+        <h3>Microsoft 365-implementatie</h3>
+        <p>Uitrol en migratie van Exchange Online, Teams, SharePoint en OneDrive — correct ingericht, veilig geconfigureerd en klaar voor dagelijks gebruik.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">▤</div>
+        <h3>Teams &amp; SharePoint</h3>
+        <p>Een doordachte structuur voor samenwerking en documentbeheer: teamsites, metadata, versiebeheer en rechten die logisch blijven meegroeien.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">🛡</div>
+        <h3>Entra ID &amp; security</h3>
+        <p>Identiteits- en toegangsbeheer met Microsoft Entra ID: MFA, Conditional Access, apparaat- en gegevensbescherming via Intune, en compliance die werkbaar blijft.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">⬡</div>
+        <h3>Azure</h3>
+        <p>Landing zones, netwerk en identiteit, back-up en herstel, kostenbeheersing en het onderbrengen van workloads in de cloud — pragmatisch opgezet en beheerbaar gehouden.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">⚙</div>
+        <h3>Automatisering met Power Platform</h3>
+        <p>Repetitief werk wegnemen met Power Automate, Power Apps en integraties tussen uw systemen — inclusief goedkeuringsstromen en rapportering.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">✦</div>
+        <h3>Copilot &amp; adoptie</h3>
+        <p>Microsoft 365 Copilot klaarzetten en verantwoord introduceren, met opleiding en begeleiding zodat uw teams de nieuwe manier van werken echt oppikken.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">◈</div>
+        <h3>Migraties</h3>
+        <p>Van on-premises of een andere tenant naar Microsoft 365: mailboxen, bestanden en groepen, met een strak draaiboek en zo weinig mogelijk hinder voor uw mensen.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">▥</div>
+        <h3>Projectbegeleiding</h3>
+        <p>Interim project- en programmamanagement voor implementaties en digitaliseringstrajecten — van scope tot oplevering, met vaste opvolging.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="aanpak">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Aanpak</span>
+      <h2>Vier stappen, geen verrassingen</h2>
+    </div>
+    <ol class="steps">
+      <li><strong>Luisteren</strong><span>We brengen uw huidige werkplek, knelpunten en doelstellingen in kaart — zonder vooraf gekozen oplossing.</span></li>
+      <li><strong>Plan</strong><span>Een concreet voorstel met scope, timing en budget. Duidelijk wat u krijgt en wat het kost.</span></li>
+      <li><strong>Uitvoeren</strong><span>We configureren, migreren en testen in korte iteraties, met vaste opvolging en zichtbare tussentijdse resultaten.</span></li>
+      <li><strong>Borgen</strong><span>Documentatie, gebruikersopleiding en nazorg, zodat uw team zelfstandig verder kan.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="waarom">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Waarom Generation-IP</span>
+      <h2>Advies dat we zelf uitvoeren</h2>
+      <p class="lead">Geen jargon en geen eindeloze studies: u krijgt een aanspreekpunt dat uw dossier kent, de configuratie zelf in handen neemt en mee aan tafel zit tot het werkt.</p>
+      <ul class="check">
+        <li>Gespecialiseerd in Modern Workplace — geen hardwareverkoop, geen bijbedoelingen</li>
+        <li>Consulting én implementatie door dezelfde persoon</li>
+        <li>Eén vast aanspreekpunt van intake tot oplevering</li>
+        <li>Transparante afspraken over scope, planning en prijs</li>
+        <li>Adoptie en kennisoverdracht standaard inbegrepen</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-bottom:16px">Waar we mee werken</h3>
+      <ul class="tech">
+        <li>Microsoft 365</li>
+        <li>Entra ID</li>
+        <li>Azure</li>
+        <li>Microsoft Teams</li>
+        <li>SharePoint Online</li>
+        <li>OneDrive</li>
+        <li>Exchange Online</li>
+        <li>Intune</li>
+        <li>Conditional Access</li>
+        <li>Power Automate</li>
+        <li>Power Apps</li>
+        <li>Microsoft 365 Copilot</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Klaar voor een werkplek die wél meewerkt?</h2>
+      <p>Een gesprek van dertig minuten volstaat vaak om te zien waar de grootste winst in uw Microsoft 365-omgeving zit. Vrijblijvend en zonder verplichtingen.</p>
+      <a class="btn" href="mailto:info@generation-ip.com?subject=Kennismaking%20Generation-IP">Neem contact op</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Laten we kennismaken</h2>
+      <p class="lead">Stuur gerust een mail met uw vraag of situatie. U krijgt doorgaans binnen één werkdag antwoord.</p>
+    </div>
+    <dl class="contact">
+      <div>
+        <dt>E-mail</dt>
+        <dd><a href="mailto:info@generation-ip.com">info@generation-ip.com</a></dd>
+      </div>
+      <div>
+        <dt>Website</dt>
+        <dd>www.generation-ip.com</dd>
+      </div>
+      <div>
+        <dt>Ondernemingsnummer</dt>
+        <dd>BE 0645.428.397</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <img class="logo-light" src="assets/logo.png" width="560" height="70" alt="Generation-IP">
+      <img class="logo-dark" src="assets/logo-light.png" width="560" height="70" alt="Generation-IP">
+      <div class="legal">
+        &copy; <span id="jaar">2026</span> Generation-IP — Alle rechten voorbehouden<br>
+        Ondernemingsnummer BE 0645.428.397 &middot; <a href="mailto:info@generation-ip.com">info@generation-ip.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
